@@ -12,7 +12,7 @@ python augmented.py \
     --pattern_path ./demo/pattern_dm.png \
     --overlay_path ./demo/overlay_dm.jpg \
     --video_path ./demo/video_dm.mp4 \
-    --output_path ./demo/output.avi
+    --output_path ./demo/output100.avi
     --viz
 ```
 For helper, see:
@@ -36,5 +36,30 @@ optional arguments:
   --viz_matches         matches will be draw, but cannot visualize different
   --viz                 visualize different, but cannot draw matches
 ```
+
+### With Docker
+You can use docker to run the code, please follow:
+1. Pull Docker Image
+```
+docker image pull ruhyadi/augmented-reality:latest
+```
+2. Run Docker
+```
+./runDocker.sh
+```
+if you have trouble with permission denied, please run:
+```
+chmod 666 ./runDocker.sh
+```
+3. Run Augmented Reality
+Run this code inside docker terminal
+```
+python augmented.py \
+    --pattern_path ./demo/pattern_dm.png \
+    --overlay_path ./demo/overlay_dm.jpg \
+    --video_path ./demo/video_dm.mp4 \
+    --viz
+```
+
 ### Reference
 - [juangallostra/augmented-reality](https://github.com/juangallostra/augmented-reality)

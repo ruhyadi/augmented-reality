@@ -1,4 +1,2 @@
 opencv-python==4.1.2.30
-PyYAML==5.1.2
 numpy
-matplotlib
