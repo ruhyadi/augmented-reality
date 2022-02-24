@@ -12,7 +12,7 @@ python augmented.py \
     --pattern_path ./demo/pattern_dm.png \
     --overlay_path ./demo/overlay_dm.jpg \
     --video_path ./demo/video_dm.mp4 \
-    --output_path ./demo/output100.avi
+    --output_path ./demo/output100.avi \
     --viz
 ```
 For helper, see:
@@ -37,7 +37,7 @@ optional arguments:
   --viz                 visualize different, but cannot draw matches
 ```
 
-### With Docker
+### Easy Way With Docker Container
 You can use docker to run the code, please follow:
 1. Pull Docker Image
 ```
@@ -59,6 +59,16 @@ python augmented.py \
     --overlay_path ./demo/overlay_dm.jpg \
     --video_path ./demo/video_dm.mp4 \
     --viz
+```
+
+### Easiest Way with Docker Compose
+Just run code below:
+```
+./runDockerCompose.sh
+```
+or with terimal, run:
+```
+docker-compose up
 ```
 
 ### Reference
