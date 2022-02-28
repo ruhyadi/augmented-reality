@@ -20,5 +20,5 @@ jobs:
       - name: build the image
         run: |
           docker buildx build --push \
-            --tag ruhyadi/multiarch-example:latest \
+            --tag ruhyadi/augmented-reality:v45 \
             --platform linux/amd64,linux/arm64 .
