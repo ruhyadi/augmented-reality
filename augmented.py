@@ -17,7 +17,8 @@ def augmented(
     video_path,
     output_path,
     viz_matches,
-    viz
+    viz,
+    notebook_mode
     ):
     homography = None 
     # create ORB keypoint detector
@@ -41,7 +42,7 @@ def augmented(
     else:
         w = int(cap.get(3))
 
-    out = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc('M','J','P','G'), 30, (w, h))
+    out = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(*'MP4V'), 30, (w, h))
 
     while True:
         # read the current frame
@@ -89,10 +90,11 @@ def augmented(
             if output_path is not None:
                 out.write(frame)
 
-            # show result
-            cv2.imshow('Augmented Reality', frame)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+            if notebook_mode:
+                # show result
+                cv2.imshow('Augmented Reality', frame)
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
         else:
             print("Not enough matches found - %d/%d" % (len(matches), MIN_MATCHES))
 
@@ -141,7 +143,8 @@ if __name__ == '__main__':
     parser.add_argument('--output_path', type=str, required=False, help='output video path if required')
     parser.add_argument('--viz_matches', action='store_true', help='matches will be draw, but cannot visualize different')
     parser.add_argument('--viz', action='store_true', help='visualize different, but cannot draw matches')
+    parser.add_argument('--notebook', action='store_true', help='Show imshow output, if false worked for colab')
 
     args = parser.parse_args()
 
-    augmented(args.pattern_path, args.overlay_path, args.video_path, args.output_path, args.viz_matches, args.viz)
+    augmented(args.pattern_path, args.overlay_path, args.video_path, args.output_path, args.viz_matches, args.viz, args.notebook)

@@ -12,7 +12,7 @@ python augmented.py \
     --pattern_path ./demo/pattern_dm.png \
     --overlay_path ./demo/overlay_dm.jpg \
     --video_path ./demo/video_dm.mp4 \
-    --output_path ./demo/output100.avi \
+    --output_path ./demo/output100.mp4 \
     --viz
 ```
 For helper, see:
@@ -73,3 +73,6 @@ docker-compose up
 
 ### Reference
 - [juangallostra/augmented-reality](https://github.com/juangallostra/augmented-reality)
+
+### About Project
+This is my internship project at Nodeflux Teknologi Indonesia
