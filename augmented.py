@@ -90,7 +90,7 @@ def augmented(
             if output_path is not None:
                 out.write(frame)
 
-            if notebook_mode:
+            if notebook_mode is not True:
                 # show result
                 cv2.imshow('Augmented Reality', frame)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
