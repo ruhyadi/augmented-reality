@@ -12,13 +12,13 @@ matches = True
 draw_augmented = True
 
 def augmented(
-    pattern_path,
-    overlay_path,
-    video_path,
-    output_path,
-    viz_matches,
-    viz,
-    notebook_mode
+    pattern_path='./',
+    overlay_path='./',
+    video_path='./',
+    output_path='./',
+    viz_matches=False,
+    viz=True,
+    notebook_mode=False
     ):
     homography = None 
     # create ORB keypoint detector
